@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../public/fonts/Satoshi-Medium.otf') format('opentype');
+  }
+
+body {
+    background-color: #cbd5e1; 
+}
+
+#font-custom {
+    font-family: 'CustomFont', sans-serif;
+  }
