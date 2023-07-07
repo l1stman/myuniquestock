@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
-      fetch("http://localhost:3333/api/users/admin/checktoken", {
+      fetch(process.env.BASE_URL + "/api/users/admin/checktoken", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

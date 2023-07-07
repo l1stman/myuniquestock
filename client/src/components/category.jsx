@@ -5,7 +5,7 @@ const WhiteCard = () => {
   const [categoryData, setCategoryData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333/api/stock/products/getallcategories", {
+    fetch(process.env.BASE_URL + "/api/stock/products/getallcategories", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,8 @@ const WhiteCard = () => {
       for (const category of categories) {
         try {
           const response = await fetch(
-            `http://localhost:3333/api/stock/products/filtred?type=category&value=${category}`,
+            process.env.BASE_URL +
+              `/api/stock/products/filtred?type=category&value=${category}`,
             {
               method: "POST",
               headers: {

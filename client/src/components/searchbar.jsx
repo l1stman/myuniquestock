@@ -9,7 +9,7 @@ const SearchBar = () => {
   const handleSearch = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3333/api/stock/products/search",
+        process.env.BASE_URL + "/api/stock/products/search",
         {
           method: "POST",
           headers: {

@@ -5,7 +5,7 @@ const TwoCards = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333/api/stock/products/getallcategories", {
+    fetch(process.env.BASE_URL + "/api/stock/products/getallcategories", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

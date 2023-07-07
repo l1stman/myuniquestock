@@ -28,7 +28,7 @@ const Dashboard = () => {
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
-      fetch("http://localhost:3333/api/users/admin/checktoken", {
+      fetch(process.env.BASE_URL + "/api/users/admin/checktoken", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +49,7 @@ const Dashboard = () => {
   }, []);
   // Products
   useEffect(() => {
-    fetch("http://localhost:3333/api/stock/products/", {
+    fetch(process.env.BASE_URL + "/api/stock/products/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -119,7 +119,7 @@ const Dashboard = () => {
       return setErrorMessage("Please type new product data");
     }
     const response = await fetch(
-      "http://localhost:3333/api/stock/products/create",
+      process.env.BASE_URL + "/api/stock/products/create",
       {
         method: "POST",
         headers: {
@@ -153,7 +153,7 @@ const Dashboard = () => {
   const editProduct = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:3333/api/stock/products/edit",
+      process.env.BASE_URL + "/api/stock/products/edit",
       {
         method: "PUT",
         headers: {
@@ -186,7 +186,7 @@ const Dashboard = () => {
     e.preventDefault();
     console.log(productinfo);
     const response = await fetch(
-      "http://localhost:3333/api/stock/products/delete",
+      process.env.BASE_URL + "/api/stock/products/delete",
       {
         method: "DELETE",
         headers: {

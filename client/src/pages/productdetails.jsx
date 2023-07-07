@@ -9,7 +9,7 @@ const ProductDetails = () => {
     const fetchProductData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3333/api/stock/products/search/slug",
+          process.env.BASE_URL + "/api/stock/products/search/slug",
           {
             method: "POST",
             headers: {

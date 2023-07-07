@@ -4,7 +4,8 @@ exports.homepage = (req, res) => {
   if (type && value) {
     axios
       .post(
-        `http://localhost:3333/api/stock/products/filtred?type=${type}&value=${value}`
+        process.env.BASE_URL +
+          `/api/stock/products/filtred?type=${type}&value=${value}`
       )
       .then((response) => {
         res.json({
@@ -19,7 +20,7 @@ exports.homepage = (req, res) => {
       });
   } else {
     axios
-      .post("http://localhost:3333/api/stock/products")
+      .post(process.env.BASE_URL + "/api/stock/products")
       .then((response) => {
         res.json({
           length: response.data.docs.length,
